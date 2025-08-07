@@ -1,0 +1,224 @@
+{
+    "env_name": "AngryBirds",
+    "settings": {
+        "app_name": "iPhone Mirroring",
+        "default_wait_time": 2.0,
+        "tmp_log_dir": "tmp_log/05_angrybirs"
+    },
+    "ui_map": {
+        "start_play": { "x": 0.5, "y": 0.5, "action": "click"},
+        "skip_animation": { "x": 0.936, "y": 0.883, "action": "click"},
+        "scenes": {
+            "1": {"x": 0.17, "y": 0.5, "action": "click"},
+            "2": {"x": 0.31, "y": 0.5, "action": "click"}
+        },
+        "levels": {
+            "1":  {"x": 0.16, "y": 0.26, "action": "click"},
+            "2":  {"x": 0.27, "y": 0.26, "action": "click"},
+            "3":  {"x": 0.38, "y": 0.26, "action": "click"},
+            "4":  {"x": 0.50, "y": 0.26, "action": "click"},
+            "5":  {"x": 0.62, "y": 0.26, "action": "click"},
+            "6":  {"x": 0.74, "y": 0.26, "action": "click"},
+            "7":  {"x": 0.86, "y": 0.26, "action": "click"},
+
+            "8":  {"x": 0.16, "y": 0.48, "action": "click"},
+            "9":  {"x": 0.27, "y": 0.48, "action": "click"},
+            "10": {"x": 0.38, "y": 0.48, "action": "click"},
+            "11": {"x": 0.50, "y": 0.48, "action": "click"},
+            "12": {"x": 0.62, "y": 0.48, "action": "click"},
+            "13": {"x": 0.74, "y": 0.48, "action": "click"},
+            "14": {"x": 0.86, "y": 0.48, "action": "click"},
+
+            "15": {"x": 0.16, "y": 0.70, "action": "click"},
+            "16": {"x": 0.27, "y": 0.70, "action": "click"},
+            "17": {"x": 0.38, "y": 0.70, "action": "click"},
+            "18": {"x": 0.50, "y": 0.70, "action": "click"},
+            "19": {"x": 0.62, "y": 0.70, "action": "click"},
+            "20": {"x": 0.74, "y": 0.70, "action": "click"},
+            "21": {"x": 0.86, "y": 0.70, "action": "click"}
+        },
+        "in_game_functions": {
+            "pause": {"x": 0.066, "y": 0.161, "action": "click" },
+             "in_pause_restart": {"x": 0.090, "y": 0.400, "action": "click" },
+             "in_pause_continue": {"x": 0.136, "y": 0.538, "action": "click" },
+             "in_pause_menu": {"x": 0.086, "y": 0.665, "action": "click" },
+             "after_level_menu": {"x": 0.432, "y": 0.87, "action": "click"},
+             "after_level_restart": {"x": 0.5, "y": 0.87, "action": "click"},
+             "after_level_next": {"x": 0.6, "y": 0.87, "action": "click"}
+        }
+    },
+    "Scene 1": {
+        "level 1": {
+            "bird_number": 3,
+            "bird_type": ["red", "red", "red"],
+            "slingshot_pos": {"x": 0.40, "y": 0.75}
+        },
+        "level 2": {
+            "bird_number": 5,
+            "bird_type": ["red", "red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.40, "y": 0.73}
+        },
+        "level 3": {
+            "bird_number": 4,
+            "bird_type": ["red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.40, "y": 0.78}
+        },
+        "level 4": {
+            "bird_number": 4,
+            "bird_type": ["red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.41, "y": 0.75}
+        },
+        "level 5": {
+            "bird_number": 4,
+            "bird_type": ["red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.40, "y": 0.78}
+        },
+        "level 6": {
+            "bird_number": 4,
+            "bird_type": ["red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.40, "y": 0.75}
+        },
+        "level 7": {
+            "bird_number": 4,
+            "bird_type": ["red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.36, "y": 0.80}
+        },
+        "level 8": {
+            "bird_number": 4,
+            "bird_type": ["red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.37, "y": 0.81}
+        },
+        "level 9": {
+            "bird_number": 4,
+            "bird_type": ["red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.38, "y": 0.706}
+        },
+        "level 10": {
+            "bird_number": 5,
+            "bird_type": ["blue", "blue", "blue", "blue", "blue"],
+            "slingshot_pos": {"x": 0.373, "y": 0.80}
+        },
+        "level 11": {
+            "bird_number": 4,
+            "bird_type": ["red", "blue", "blue", "blue"],
+            "slingshot_pos": {"x": 0.383, "y": 0.814}
+        },
+        "level 12": {
+            "bird_number": 4,
+            "bird_type": ["blue", "blue", "blue", "red"],
+            "slingshot_pos": {"x": 0.365, "y": 0.80}
+        },
+        "level 13": {
+            "bird_number": 4,
+            "bird_type": ["blue", "blue", "red", "red"],
+            "slingshot_pos": {"x": 0.368, "y": 0.802}
+        },
+        "level 14": {
+            "bird_number": 4,
+            "bird_type": ["red", "red", "red", "red"],
+            "slingshot_pos": {"x": 0.367, "y": 0.689}
+        },
+        "level 15": {
+            "bird_number": 4,
+            "bird_type": ["blue", "blue", "blue", "blue"],
+            "slingshot_pos": {"x": 0.460, "y": 0.791}
+        },
+        "level 16": {
+            "bird_number": 5,
+            "bird_type": ["yellow", "yellow", "yellow", "yellow", "yellow"],
+            "slingshot_pos": {"x": 0.376, "y": 0.710}
+        },
+        "level 17": {
+            "bird_number": 3,
+            "bird_type": ["yellow", "yellow", "yellow"],
+            "slingshot_pos": {"x": 0.402, "y": 0.836}
+        },
+        "level 18": {
+            "bird_number": 5,
+            "bird_type": ["yellow", "yellow", "yellow", "yellow", "yellow"],
+            "slingshot_pos": {"x": 0.396, "y": 0.789}
+        },
+        "level 19": {
+            "bird_number": 4,
+            "bird_type": ["blue", "yellow", "yellow", "red"],
+            "slingshot_pos": {"x": 0.440, "y": 0.771}
+        },
+        "level 20": {
+            "bird_number": 5,
+            "bird_type": ["yellow", "yellow", "yellow", "yellow", "yellow"],
+            "slingshot_pos": {"x": 0.386, "y": 0.790}
+        },
+        "level 21": {
+            "bird_number": 8,
+            "bird_type": ["blue", "red", "yellow", "blue", "red", "yellow", "yellow", "yellow"],
+            "slingshot_pos": {"x": 0.370, "y": 0.723}
+        }
+    },
+    "Scene 2": {
+        "level 1": {
+            "bird_number": 4,
+            "bird_type": ["red", "yellow", "yellow", "blue"],
+            "slingshot_pos": {"x": 0.368, "y": 0.75}
+        },
+        "level 2": {
+            "bird_number": 4,
+            "bird_type": ["blue", "blue", "blue", "blue"],
+            "slingshot_pos": {"x": 0.368, "y": 0.77}
+        },
+        "level 3": {
+            "bird_number": 5,
+            "bird_type": ["red", "red", "red", "yellow", "yellow"],
+            "slingshot_pos": {"x": 0.368, "y": 0.836}
+        },
+        "level 4": {
+            "bird_number": 4,
+            "bird_type": ["yellow", "blue", "blue", "red"],
+            "slingshot_pos": {"x": 0.368, "y": 0.82}
+        },
+        "level 5": {
+            "bird_number": 4,
+            "bird_type": ["black", "black", "black", "black"],
+            "slingshot_pos": {"x": 0.365, "y": 0.79}
+        },
+        "level 6": {
+            "bird_number": 3,
+            "bird_type": ["black", "black", "black"],
+            "slingshot_pos": {"x": 0.40, "y": 0.62}
+        },
+        "level 7": {
+            "bird_number": 4,
+            "bird_type": ["yellow", "yellow", "black", "blue"],
+            "slingshot_pos": {"x": 0.366, "y": 0.678}
+        },
+        "level 8": {
+            "bird_number": 3,
+            "bird_type": ["yellow", "red", "black"],
+            "slingshot_pos": {"x": 0.368, "y": 0.799}
+        },
+        "level 9": {
+            "bird_number": 4,
+            "bird_type": ["black", "blue", "yellow", "black"],
+            "slingshot_pos": {"x": 0.366, "y": 0.612}
+        },
+        "level 10": {
+            "bird_number": 4,
+            "bird_type": ["black", "black", "black", "black"],
+            "slingshot_pos": {"x": 0.375, "y": 0.816}
+        },
+        "level 11": {
+            "bird_number": 4,
+            "bird_type": ["black", "black", "black", "black"],
+            "slingshot_pos": {"x": 0.392, "y": 0.734}
+        },
+        "level 12": {
+            "bird_number": 6,
+            "bird_type": ["blue", "blue", "yellow", "yellow", "yellow", "black"],
+            "slingshot_pos": {"x": 0.368, "y": 0.757}
+        },
+        "level 13": {
+            "bird_number": 4,
+            "bird_type": ["yellow", "black", "black", "black"],
+            "slingshot_pos": {"x": 0.367, "y": 0.715}
+        }
+    }
+}

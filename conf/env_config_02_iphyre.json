@@ -1,0 +1,8 @@
+{
+    "env_name": "I-PHYRE",
+    "max_attempts": 10,
+    "solved_threshold": 900,
+    "fps": 10,
+    "num_frames_to_select": 5,
+    "max_image_history": 5
+}

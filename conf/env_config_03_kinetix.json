@@ -1,0 +1,18 @@
+{
+  "env_name": "kinetix",
+  "evaluation_settings": {
+    "repeat_actions": 16,
+    "history_length": 5,
+    "default_model": "api-claude37_sonnet",
+    "debug_mode": false
+  },
+  "paths": {
+    "levels_base": "suite/kinetix/levels/",
+    "log_base": "tmp_log/03_kinetix/",
+    "log_subfolder_structure": "VLA/unan/"
+  },
+  "metadata_template": {
+      "prompt_format": "VLA",
+      "annotation_mode": "unanno"
+  }
+}
