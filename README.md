@@ -1,5 +1,7 @@
 # DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning
-
+[![arXiv](https://img.shields.io/badge/arXiv-2508.05405-b31b1b.svg)](https://arxiv.org/abs/2508.05405)
+![GitHub stars](https://img.shields.io/github/stars/XinrunXu/DeepPHY?style=social)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 DeepPHY is a novel benchmark framework designed to systematically evaluate the ability of Vision-Language Models (VLMs) to understand and reason about fundamental physical principles through a series of challenging simulated environments.
 
@@ -89,7 +91,16 @@ You can modify the `MODELS`, `PROMPT_FORMATS`, and other parameters inside these
 ## Key Results
 Our experiments show that even SOTA VLMs struggle with interactive physical reasoning, revealing a significant gap between their descriptive knowledge and predictive control capabilities.
 
+## Citation
 
+```bibtex
+@article{xu2025deepphy,
+  title={DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning},
+  author={Xu, Xinrun and Bu, Pi and Wang, Ye and Karlsson, B{\"o}rje F. and Wang, Ziming and Song, Tengtao and Zhu, Qi and Song, Jun and Ding, Zhiming and Zheng, Bo},
+  journal={arXiv preprint arXiv:2508.05405,
+  year={2025}
+}
+```
 
 ## Acknowledgements
 We would like to thank the creators of the original environments that form the basis of our benchmark:
