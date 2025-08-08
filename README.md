@@ -95,7 +95,7 @@ Our experiments show that even SOTA VLMs struggle with interactive physical reas
 
 ```bibtex
 @article{xu2025deepphy,
-  title={DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning},
+  title={{DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning}},
   author={Xu, Xinrun and Bu, Pi and Wang, Ye and Karlsson, B{\"o}rje F. and Wang, Ziming and Song, Tengtao and Zhu, Qi and Song, Jun and Ding, Zhiming and Zheng, Bo},
   journal={arXiv preprint arXiv:2508.05405,
   year={2025}
