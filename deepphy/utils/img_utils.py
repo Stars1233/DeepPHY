@@ -42,7 +42,7 @@ def find_dynamic_frames(directory, k = 5):
 
     return image_files
 
-def add_grid_with_matplotlib(image_path, grid_size, line_color='red', line_width=1.5, fontsize=12):
+def add_grid_with_matplotlib(image_path, grid_size, line_color='red', line_width=1.5, fontsize=10):
     """Draws a grid and numbers on an image and saves it as a new file."""
     if not os.path.exists(image_path):
         print(f"  Error: Cannot add grid, file not found -> {image_path}")

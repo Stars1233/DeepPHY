@@ -16,6 +16,11 @@ def get_ideatalk_model_response(image_descriptions, system_prompt, user_prompt,
     api_key = None
     api_provider = "openai"
 
+    if 'claude' in model_name:
+        if len(image_descriptions) > 20:
+            print("Use Claude API, but the number of images exceeds 20, which may cause issues.")
+            image_descriptions = image_descriptions[-20:]  # Limit to last 20 images
+
     if model_name.startswith("bailian-"):
         api_provider = "bailian"
         print("Use BAILIAN API")

@@ -319,8 +319,8 @@ if __name__ == "__main__":
         "level_type", type=str, nargs='?', help="Level type ('s', 'm', 'l'). Required for a new run."
     )
     parser.add_argument(
-        '--model', type=str, default=config.evaluation_settings['default_model'],
-        help=f"Model name. Default: {config.evaluation_settings['default_model']}"
+        '--model', type=str, default='mock',
+        help=f"Model name. Default: MOCK"
     )
     parser.add_argument(
         '--format', type=str, default='VLA', choices=['VLA', 'WM'],

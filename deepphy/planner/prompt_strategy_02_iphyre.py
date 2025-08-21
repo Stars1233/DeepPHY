@@ -1,6 +1,7 @@
 import re
 import numpy as np
 import json
+import ast
 
 from deepphy.config import Config
 
@@ -21,13 +22,13 @@ def _extract_json_actions_from_string(json_raw_string: str) -> list:
     # Prefer matching Markdown-style JSON code blocks
     json_match = re.search(r'```(?:json)?\s*(\[.*?\])\s*```', json_raw_string, re.DOTALL)
     if json_match:
-        json_string = json_match.group(1)
+        json_string = json_match.group(1).strip()
         # print("  Successfully extracted JSON from Markdown code block.") # Suppressed for sub-function
     else:
         # If no code block is found, try to find the outermost [] directly
         start = json_raw_string.find('[')
         end = json_raw_string.rfind(']')
-        if start != -1 and end != -1:
+        if start != -1 and end != -1 and start < end:
             json_string = json_raw_string[start:end+1]
             # print("  Warning: Markdown code block not found, attempting to extract '[]' content directly.") # Suppressed for sub-function
         else:
@@ -37,19 +38,23 @@ def _extract_json_actions_from_string(json_raw_string: str) -> list:
     if not json_string:
         return []
 
+    actions = []
+
     try:
         # Remove potential inline comments
         json_string_no_comments = re.sub(r'//.*', '', json_string)
         actions = json.loads(json_string_no_comments)
-        if isinstance(actions, list):
-            # print(f"  Successfully parsed {len(actions)} actions.") # Suppressed for sub-function
-            return actions
-        else:
-            # print(f"  Parsing failed: The parsed content is not a list, but {type(actions)}.") # Suppressed for sub-function
+    except json.JSONDecodeError:
+        try:
+            actions = ast.literal_eval(json_string)
+        except (SyntaxError, ValueError, MemoryError, TypeError) as e:
+            print(f"Error parsing JSON actions: {e}")
             return []
-    except json.JSONDecodeError as e:
-        print(f"  Parsing failed: The extracted string is not valid JSON: {e}")
-        print(f"  Extracted string content: {json_string}")
+
+    if isinstance(actions, list):
+        return actions
+    else:
+        print("Parsed actions are not a list, returning empty list.")
         return []
 
 class PromptStrategy:

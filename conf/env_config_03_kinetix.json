@@ -3,7 +3,6 @@
   "evaluation_settings": {
     "repeat_actions": 16,
     "history_length": 5,
-    "default_model": "api-claude37_sonnet",
     "debug_mode": false
   },
   "paths": {
