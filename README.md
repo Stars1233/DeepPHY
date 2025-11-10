@@ -1,7 +1,10 @@
 # DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning
+
+![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-green)
 [![arXiv](https://img.shields.io/badge/arXiv-2508.05405-b31b1b.svg)](https://arxiv.org/abs/2508.05405)
-![GitHub stars](https://img.shields.io/github/stars/XinrunXu/DeepPHY?style=social)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![GitHub stars](https://img.shields.io/github/stars/XinrunXu/DeepPHY?style=social)
+![GitHub forks](https://img.shields.io/github/forks/XinrunXu/DeepPHY?style=social)
 
 DeepPHY is a novel benchmark framework designed to systematically evaluate the ability of Vision-Language Models (VLMs) to understand and reason about fundamental physical principles through a series of challenging simulated environments.
 
@@ -94,10 +97,17 @@ Our experiments show that even SOTA VLMs struggle with interactive physical reas
 ## Citation
 
 ```bibtex
+@inproceedings{aaai-xu2025deepphy,
+    author = {Xu, Xinrun and Bu, Pi and Wang, Ye and Karlsson, B{\"o}rje F. and Wang, Ziming and Song, Tengtao and Zhu, Qi and Song, Jun and Ding, Zhiming and Zheng, Bo},
+    title = {{DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning}},
+    booktitle = {Proceedings of the 40th Annual AAAI Conference on Artificial Intelligence (AAAI-26)},
+    year = 2026
+}
+
 @article{xu2025deepphy,
   title={{DeepPHY: Benchmarking Agentic VLMs on Physical Reasoning}},
   author={Xu, Xinrun and Bu, Pi and Wang, Ye and Karlsson, B{\"o}rje F. and Wang, Ziming and Song, Tengtao and Zhu, Qi and Song, Jun and Ding, Zhiming and Zheng, Bo},
-  journal={arXiv preprint arXiv:2508.05405,
+  journal={arXiv preprint arXiv:2508.05405},
   year={2025}
 }
 ```

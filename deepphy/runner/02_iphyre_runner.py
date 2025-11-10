@@ -255,7 +255,7 @@ def process_single_task_with_retries(task_id, task_name, main_results_dir, initi
         if model_name.lower() == "mock":
             print("  [MOCK MODE] Using mock action generator.")
             parsed_actions_mock = get_mock_actions(num_eliminable_blocks)
-            vlm_response = f"Mock actions generated for attempt {attempt_num}"
+            vlm_response = f"Mock actions generated for attempt {attempt_num}: " + str(parsed_actions_mock)
             # Simulate parsed_output from strategy based on mock actions
             parsed_output = {"parsed_actions": parsed_actions_mock}
             if isinstance(strategy, WmStrategy):
@@ -297,11 +297,12 @@ def process_single_task_with_retries(task_id, task_name, main_results_dir, initi
         print("sim_frames: ", sim_frames)
 
         # --- 6. Record Current Attempt in History (delegated to strategy) ---
+        reward_str = str(reward)
         base_attempt_data = {
             "attempt_number": attempt_num,
             "vlm_response": vlm_response,
             "sim_actions": actions_for_sim,
-            "reward": reward,
+            "reward": reward_str,
             "simulation_frames": sim_frames
         }
         current_attempt_data = strategy.update_attempt_data(base_attempt_data, parsed_output)
@@ -318,12 +319,13 @@ def process_single_task_with_retries(task_id, task_name, main_results_dir, initi
                 print("  Preparing for the next attempt...")
 
     # --- 8. Return Final Result ---
+    best_reward_str = str(best_reward)
     final_result = {
         "task_id": task_id,
         "task_name": task_name,
         "is_solved": is_solved,
         "total_attempts": len(attempt_history),
-        "best_reward": best_reward,
+        "best_reward": best_reward_stradd,
         "final_actions": final_actions_sim,
         "output_dir": task_dir,
         "attempt_history": attempt_history,

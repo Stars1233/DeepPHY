@@ -1,7 +1,7 @@
 {
     "env_name": "PHYRE",
     "max_attempts": 10,
-    "grid_size": [5, 5],
-    "radius_levels": 5,
+    "grid_size": [8, 8],
+    "radius_levels": 8,
     "max_image_history": 5
 }
