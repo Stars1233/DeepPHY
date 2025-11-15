@@ -325,7 +325,7 @@ def process_single_task_with_retries(task_id, task_name, main_results_dir, initi
         "task_name": task_name,
         "is_solved": is_solved,
         "total_attempts": len(attempt_history),
-        "best_reward": best_reward_stradd,
+        "best_reward": best_reward_str,
         "final_actions": final_actions_sim,
         "output_dir": task_dir,
         "attempt_history": attempt_history,

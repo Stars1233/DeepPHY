@@ -43,7 +43,7 @@ for model in "${MODELS[@]}"; do
         for prompt_format in "${PROMPT_FORMAT[@]}"; do
             echo "    Using prompt format: $prompt_format"
             filename="${model}_${template}_${prompt_format}_$(date +%Y%m%d_%H%M%S).out"
-            python -u -m deepphy.runner.01_phyre_runner --model "$model" --template "$template" --prompt_format "$prompt_format" 2>&1 | tee "phyre_out/$filename"
+            python -u -m deepphy.runner.01_phyre_runner --model "$model" --eval_setup "$template" --format "$prompt_format" 2>&1 | tee "phyre_out/$filename"
         done
     done
 done

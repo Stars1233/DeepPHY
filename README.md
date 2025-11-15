@@ -30,7 +30,7 @@ DeepPHY systematically integrates six challenging physics-based simulation envir
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/XXX/DeepPHY.git
+git clone https://github.com/XinrunXu/DeepPHY.git
 cd DeepPHY
 ```
 
@@ -40,12 +40,17 @@ We recommend using Python `3.10`.
 pip install -r requirements_py310.txt
 ```
 **Environment-Specific Setups:**
-*   **PHYRE:** This environment requires `python=3.9` and is only supported on Linux.
+*   **PHYRE:** This environment requires `python=3.9`.
     ```bash
-    # Create a separate conda environment if needed
-    conda create -n phyre python=3.9
-    conda activate phyre
-    pip install -r requirements_py39.txt
+    # Create a separate conda environment
+    conda create --yes -n phyre python=3.9
+    source activate phyre
+    conda install -c conda-forge sed nodejs=12 thrift-cpp=0.11.0 wget pybind11=2.6 cmake boost=1.75 setuptools pip --yes
+    pip install matplotlib tqdm ipywidgets yapf==0.28.0
+
+    git clone https://github.com/facebookresearch/phyre.git
+    cd phyre
+    pip install -e src/python
     ```
 *   **I-PHYRE:** After installing `requirements_py310.txt`, please replace the file at `.conda/envs/iphyre/lib/python3.10/site-packages/iphyre/simulator.py` with our provided version at `res/02_iphyre/simulator.py`. This step is necessary to generate the annotated images.
 
