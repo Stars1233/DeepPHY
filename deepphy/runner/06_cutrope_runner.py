@@ -100,7 +100,15 @@ def parse_and_execute_action(action_str, app_name, level_data):
             bubble_id = str(int(params.get('id', 0)))
             coords = level_data.get("Bubble", {}).get(bubble_id)
             if coords:
-                perform_action_at_relative_coords(app_name, {'action': 'click', **coords})
+                # Offset the y coordinate upward to account for bubble rising
+                # Default 20% upward offset since bubbles float upward
+                y_offset = params.get('y_offset', 0.2)
+                adjusted_coords = {
+                    'x': coords['x'],
+                    'y': max(0.0, coords['y'] - y_offset)  # Ensure y doesn't go below 0
+                }
+                print(f"  - Popping Bubble {bubble_id} at original {coords}, adjusted to {adjusted_coords} (offset: {y_offset})")
+                perform_action_at_relative_coords(app_name, {'action': 'click', **adjusted_coords})
             else:
                 print(f"  - [!] Error: Bubble with id {params.get('id')} (key: {bubble_id}) not found in config.")
         elif action_name == 'tap_air_cushion':

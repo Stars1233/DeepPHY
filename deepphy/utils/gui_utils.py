@@ -186,43 +186,65 @@ def perform_action_at_relative_coords(app_name, action_info):
     abs_y = win_top + win_height * action_info['y']
     action_type = action_info.get('action', 'click')
 
-    print(f"    - Performing Action: '{action_type.upper()}' at relative ({action_info['x']:.3f}, {action_info['y']:.3f})")
+    print(f"    - Performing Action: '{action_type.upper()}' at relative ({action_info['x']:.3f}, {action_info['y']:.3f}) -> abs ({abs_x:.0f}, {abs_y:.0f})")
+
     pyautogui.moveTo(abs_x, abs_y, duration=0.1)
+
     if action_type == "click":
-        pyautogui.click()
+        pyautogui.click(button='left')
     elif action_type == "double_click":
-        pyautogui.doubleClick()
+        pyautogui.doubleClick(button='left')
     elif action_type == "long_press":
-        pyautogui.mouseDown()
+        pyautogui.mouseDown(button='left')
         time.sleep(action_info.get('duration', 0.2))
-        pyautogui.mouseUp()
+        pyautogui.mouseUp(button='left')
+
     return True
 
-def perform_action_swipe(app_name, direction='left'):
-    """Performs a swipe left action."""
+def perform_action_swipe(app_name, direction='left', distance=0.3, duration=0.3):
+    """
+    Performs a swipe action.
 
-    pyautogui.mouseUp()
+    Args:
+        app_name: Name of the application window
+        direction: 'left' or 'right'
+        distance: Swipe distance as a fraction of window width (default: 0.3 = 30%)
+        duration: Duration of the swipe in seconds (default: 0.3)
+    """
+
+    pyautogui.mouseUp(button='left')  # Ensure mouse is released first
 
     action_info = {"x": 0.5, "y": 0.3}
-    width = 0.025
     if not activate_app(app_name): return False
     geometry = get_window_geometry_macos(app_name)
     if not geometry: return False
 
     win_left, win_top, win_width, win_height = geometry
-    abs_x = win_left + win_width * action_info['x']
-    abs_y = win_top + win_height * action_info['y']
-    swipe_distance = win_width * width
+    start_x = win_left + win_width * action_info['x']
+    start_y = win_top + win_height * action_info['y']
+    swipe_distance = win_width * distance
 
-    print(f"    - Performing Action: 'SWIPE' '{direction.upper()}'")
-    pyautogui.moveTo(abs_x, abs_y, duration=0.1)
-    pyautogui.mouseDown()
-    time.sleep(0.1)
+    # Calculate end position
     if direction == 'left':
-        pyautogui.moveRel(-swipe_distance, 0, duration=0.2)
+        end_x = start_x - swipe_distance
     elif direction == 'right':
-        pyautogui.moveRel(swipe_distance, 0, duration=0.2)
-    pyautogui.mouseUp()
+        end_x = start_x + swipe_distance
+    else:
+        end_x = start_x
+    end_y = start_y
+
+    print(f"    - Performing Action: 'SWIPE' '{direction.upper()}' (distance={distance*100:.0f}%, duration={duration}s)")
+    print(f"      - From ({start_x:.0f}, {start_y:.0f}) to ({end_x:.0f}, {end_y:.0f})")
+
+    # Use the same pattern as perform_action_shoot
+    pyautogui.moveTo(start_x, start_y, duration=0.2)
+    time.sleep(0.1)
+    pyautogui.mouseDown(button='left')
+    time.sleep(0.1)
+    pyautogui.dragTo(end_x, end_y, duration=duration, button='left')
+    time.sleep(0.05)
+    pyautogui.mouseUp(button='left')
+
     return True
 
 def perform_action_shoot(app_name, start_point, angle_degrees, power_ratio):

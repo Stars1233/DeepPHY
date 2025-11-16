@@ -86,8 +86,11 @@ def detect_bubbles(image_path, output_image_path):
             text_y = y + r + 25  # Offset below the circle's bottom edge
             cv2.putText(annotated_image, label, (text_x, text_y), font, font_scale, color, thickness)
 
-        # Save the annotated image
-        cv2.imwrite(output_image_path, annotated_image)
-        print(f"  - [Bubble Detector] Saved annotated bubble image to: {output_image_path}")
+    # Save the annotated image (always, even if no bubbles detected)
+    cv2.imwrite(output_image_path, annotated_image)
+    if circles is not None:
+        print(f"  - [Bubble Detector] Detected {len(detected_bubbles_coords)} bubble(s). Saved annotated image to: {output_image_path}")
+    else:
+        print(f"  - [Bubble Detector] No bubbles detected. Saved original image to: {output_image_path}")
 
     return detected_bubbles_coords
